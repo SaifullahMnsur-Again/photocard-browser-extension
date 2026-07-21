@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Facebook Data Collector",
+  "version": "1.0",
+  "description": "Collects Facebook post data on demand.",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.facebook.com/*",
+    "*://*.fbcdn.net/*",
+    "https://*.saifullahmnsur.dev/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
